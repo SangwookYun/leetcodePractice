@@ -38,3 +38,4 @@ if __name__ == "__main__":
     print(solution1)
     solution2 = solution.postorder_traversal_iterative(root1)
     print(solution2)
+    print("WORKING!")
