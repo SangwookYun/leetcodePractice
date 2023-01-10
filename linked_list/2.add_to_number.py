@@ -11,10 +11,10 @@ class Solution:
             if l1 is None:
                 sum = l2.val + 0
                 l2 = l2.next
-            if l2 is None:
+            elif l2 is None:
                 sum = l1.val + 0
                 l1 = l1.next
-            if l1 and l2:
+            else:
                 sum = l1.val + l2.val
                 l1 = l1.next
                 l2 = l2.next
@@ -25,7 +25,6 @@ class Solution:
             if sum >= 10:
                 sum -= 10
                 flag = True
-            print(cur)
             cur.next = ListNode(sum)
             cur = cur.next
 
@@ -36,7 +35,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print("WORKING!")
     listNode3 = ListNode(3)
     listNode2 = ListNode(4, listNode3)
     listNodeRoot1 = ListNode(2, listNode2)
