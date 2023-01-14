@@ -16,7 +16,15 @@ class Solution:
         return self.cur_max
 
     def maxDepth_bottomup(self, root):
-        pass
+        if not root:
+            return 0
+        left_level = self.maxDepth_bottomup(root.left)
+        right_level = self.maxDepth_bottomup(root.right)
+
+        return max(left_level, right_level) + 1
+
+        maxDepth_bottomup(root)
+
 
 
 if __name__ == "__main__":
@@ -29,5 +37,5 @@ if __name__ == "__main__":
     sol = Solution()
     print("## TOPDOWN ##")
     print(sol.maxDepth_topdown(root1))
-
+    print("## BOTTOMUP ##")
     print(sol.maxDepth_bottomup(root1))
