@@ -47,7 +47,7 @@ if __name__ == "__main__":
     arr2 = ["cha","r","act","ers"]
     print("PASS" if solution.maxLength(arr2) == 6 else "FAILED")
     print("------")
-    #TestCase2
+    #TestCase3
     print("TESTCASE3")
     arr3 = ["abcdefghijklmnopqrstuvwxyz"]
     print("PASS" if solution.maxLength(arr3) == 26 else "FAILED")
