@@ -1,4 +1,4 @@
-from TreeNode import TreeNode
+from hash.TreeNode import TreeNode
 
 class Solution:
     def postorder_traversal_recursive(self, root):

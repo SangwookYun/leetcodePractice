@@ -1,4 +1,4 @@
-from TreeNode import TreeNode
+from hash.TreeNode import TreeNode
 class Solution:
     def isSameTree(self, p,q):
         if p is None and q is None:
