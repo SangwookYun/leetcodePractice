@@ -1,15 +1,19 @@
 from TreeNode import TreeNode
 class Solution:
-    def isSameTree(self, p,q):
-        if p is None and q is None:
-            return True
-        if (p is None and q is not None) or (p is not None and q is None):
-            return False
-        else:
-            if p.val != q.val:
+    def isSymmetric(self, root):
+        def dfs(left, right):
+            if not left and not right:
+                return True
+            if not left or not right:
                 return False
-    
-        return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+            return left.val == right.val and dfs(left.left, right.right) and dfs(left.right, right.left)
+        
+        return dfs(root.left, root.right)
+
+
+
+
+
         
             
         
@@ -30,8 +34,7 @@ if __name__ == "__main__":
     
     #TestCase1
     print("TESTCASE1")
-    print("PASS" if solution.isSameTree(root1, root4) == True else "FAILED")
-    # print(solution.pseudoPalindromicPaths(root1))
+    print(solution.isSymmetric(root1))
     print("------")
 
     
@@ -44,8 +47,7 @@ if __name__ == "__main__":
 
     root3.right = root4
     
-    #TestCase1
-    print("TESTCASE1")
-    print("PASS" if solution.isSameTree(root1, root3) == False else "FAILED")
-    # print(solution.pseudoPalindromicPaths(root1))
+    #TestCase2
+    print("TESTCASE2")
+    print(solution.isSymmetric(root1))
     print("------")

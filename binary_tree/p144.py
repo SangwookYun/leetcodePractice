@@ -1,19 +1,17 @@
-from hash.TreeNode import TreeNode
-
-
+from TreeNode import TreeNode
 class Solution:
     def preorder_traversal_recursive(self, root):
-        ans = []
-
-        def traversal(root):
-            if not root:
-                return
-            ans.append(root.val)
-            traversal(root.left)
-            traversal(root.right)
-        traversal(root)
-
-        return ans
+        self.order = []
+        if root is None:
+            return 
+        self.traverse(root)
+        return self.order
+    def traverse(self, node):
+        if node is None:
+            return
+        self.order.append(node.val)
+        self.traverse(node.left)
+        self.traverse(node.right)    
 
     def preorder_traversal_iterative(self, root):
         stack = [root]
@@ -21,11 +19,16 @@ class Solution:
         while stack:
             cur = stack.pop()
             if cur:
-                ans.append(cur.val)
                 stack.append(cur.right)
                 stack.append(cur.left)
-
+                ans.append(cur.val)
         return ans
+            
+            
+
+
+
+
 
 
 if __name__ == "__main__":
@@ -39,7 +42,7 @@ if __name__ == "__main__":
     root2.left = root3
 
     # Test Case2
-    root4 = []
+    root4 = TreeNode(None)
 
     # Test Case3
     root5 = TreeNode(5)

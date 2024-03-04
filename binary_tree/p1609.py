@@ -1,4 +1,4 @@
-from hash.TreeNode import TreeNode
+from TreeNode import TreeNode
 class Solution:
     def isEvenOddTree (self, root) -> int:
         pass

@@ -1,4 +1,4 @@
-from hash.TreeNode import TreeNode
+from TreeNode import TreeNode
 class Solution:
     def findBottomLeftValue(self, root):
         self.ans = []
