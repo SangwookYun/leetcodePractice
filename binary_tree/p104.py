@@ -1,29 +1,17 @@
 from TreeNode import TreeNode
 class Solution:
     def maxDepth(self, root):
-        self.max_level = 0
-        if root is None:
-            return 0
-        
-        self.traverse(root, 0)
+        self.maxDepth = 0
 
-        return self.max_level
+        def traverse(node, cur_level):
+            if node is None:
+                self.maxDepth = max(self.maxDepth, cur_level)
+                return 
+            traverse(node.left, cur_level +1)
+            traverse(node.right, cur_level+1)
 
-        
-    def traverse(self, root, cur_level):
-        if root is None:
-            return
-        cur_level +=1
-
-        self.max_level = max(self.max_level, cur_level)
-        if root.left:            
-            self.traverse(root.left, cur_level)
-        if root.right:
-            self.traverse(root.right, cur_level)
-
-
-
-        
+        traverse(root, 0)
+        return self.maxDepth
             
         
 if __name__ == "__main__":
