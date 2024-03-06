@@ -1,6 +1,6 @@
 from TreeNode import TreeNode
 class Solution:
-    def levelOrder(self, root):
+    def levelOrder_stack(self, root):
         ans = []
         stack = [root]
         temp_stack = []
@@ -22,7 +22,26 @@ class Solution:
             temp_stack = []
 
         return ans
-            
+
+    def levelOrder(self, root):
+        ans = []
+        queue= [root]
+                
+        while queue:
+            qLen = len(queue)
+            level = []
+            for i in range(qLen):
+                cur = queue.pop(0)
+                if cur:
+                    
+                    level.append(cur.val)
+                    queue.append(cur.left)
+                    queue.append(cur.right)
+            if level:
+                ans.append(level)
+
+        return ans
+
                
             
             
