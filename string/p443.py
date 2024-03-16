@@ -35,6 +35,30 @@ class Solution:
             pt+=1
 
         return chars[0:pt]
+    
+    def compress_2(self,chars) -> str:
+        left = 0
+        idx = 0
+        while left <len(chars):
+            right = left
+            while right <len(chars) and chars[left] == chars[right]:
+                right +=1
+
+            chars[idx] = chars[left]
+            idx +=1
+            occurence = right-left
+            if occurence> 1:
+                for i in str(occurence):
+                    chars[idx]= i
+                    idx+=1 
+
+            left = right
+        
+        return chars[0:idx]
+
+
+        
+
 
         
 
